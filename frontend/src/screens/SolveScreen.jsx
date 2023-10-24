@@ -4,6 +4,7 @@ import axios from 'axios';
 import QuestionPage1 from '../components/QuestionPage1';
 import QuestionPage2 from '../components/QuestionPage2';
 import ResultPage3 from '../components/ResultPage3';
+import ThankyouPage4 from '../components/ThankyouPage4';
 
 const SolveScreen = () => {
     const [currentPage,setCurrentPage]=useState(1);
@@ -78,7 +79,12 @@ const SolveScreen = () => {
             <ResultPage3
             questions={questions}
             studentName={studentName}
-            selectedOptions={selectedOptions} />
+            selectedOptions={selectedOptions} 
+            paperCreator={paperCreator}
+            onPageChange={handlePageChange}/>
+        }
+        {currentPage===4 &&
+            <ThankyouPage4 />
         }
     </div>
     )

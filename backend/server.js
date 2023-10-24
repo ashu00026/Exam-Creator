@@ -4,6 +4,7 @@ dotenv.config();
 import cookieParser from 'cookie-parser';
 import userRoutes from './routes/userRoutes.js';
 import paperRoutes from "./routes/paperRoutes.js";
+import studentRoutes from "./routes/studentRoute.js";
 import { errorHandler, notFound } from './middleware/errorMiddleware.js';
 import connectDB from './config/db.js';
 
@@ -17,6 +18,7 @@ app.use(cookieParser())
 
 app.use('/api/users',userRoutes);
 app.use('/api/papers',paperRoutes);
+app.use('/api/students',studentRoutes);
 
 app.get('/',(req,res)=>{
     res.send("Backend running fine")

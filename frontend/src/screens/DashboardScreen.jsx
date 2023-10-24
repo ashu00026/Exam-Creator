@@ -47,9 +47,8 @@ const DashboardScreen = () => {
         <h2>Created Questions</h2>
         <button onClick={handleSavePaper}>Save Paper</button>
             {questions.map((question, index) => (
-                <>
-                <div>
-                    <h5 key={index}>
+                <div key={index}>
+                    <h5>
                         <strong>Question:</strong> {question.questionDetail}
                         <button type="button" onClick={() => deleteQue(question.questionDetail)}>Delete</button>
                         <ul>
@@ -61,7 +60,6 @@ const DashboardScreen = () => {
                     <p>Answer :{question.answer}</p>
                     <p>weightage :{question.weightage}</p>
                 </div>
-                </>
             ))}
     </div>
     </>

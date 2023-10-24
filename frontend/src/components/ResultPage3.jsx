@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import { toast } from 'react-toastify'
+import axios from 'axios';
 
-const ResultPage3 = ({questions, selectedOptions, studentName}) => {
+const ResultPage3 = ({questions, selectedOptions, studentName, paperCreator, onPageChange}) => {
     // const [actualOptions,setActualOptions]=useState([]);
     const [totalMarks,setTotalmarks]=useState(0);
     const [marks,setMarks]=useState(0);
@@ -31,6 +32,15 @@ const ResultPage3 = ({questions, selectedOptions, studentName}) => {
 
     const handleSubmit=async ()=>{
         console.log(studentName, "submitted");
+        const response=await axios.post(`http://localhost:5000/api/students/submit-mark`,
+        {name: studentName, paperCreator, totalMarks, obtainMarks: marks, correct, wrong});
+        if(response.data.message==='paper submitted'){
+            toast.success("Marks submitted successfully")
+            onPageChange(4);
+        }
+        else{
+            toast.error("Could not submit, try again!")
+        }
     }
     return (
       <div>
