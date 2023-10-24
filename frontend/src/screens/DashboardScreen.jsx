@@ -19,7 +19,8 @@ const DashboardScreen = () => {
 
     useEffect(()=>{
         const getQues=async()=>{
-            const response=await axios.get(`http://localhost:5000/api/papers/get-paper/${userInfo._id}`);
+            // const response=await axios.get(`http://localhost:5000/api/papers/get-paper/${userInfo._id}`);
+            const response=await axios.get(`/api/papers/get-paper/${userInfo._id}`);
             if(response.data.message==='user has paper'){
                 setQuestions(response.data.paper.paper)
             }
@@ -33,7 +34,8 @@ const DashboardScreen = () => {
             "paperCreator" : `${userInfo._id}`
         }
         console.log("to save ",newPaper)
-        const response=await axios.post("http://localhost:5000/api/papers/add-paper", newPaper);
+        // const response=await axios.post("http://localhost:5000/api/papers/add-paper", newPaper);
+        const response=await axios.post("/api/papers/add-paper", newPaper);
         console.log(response); 
         toast.success('paper added');
     }

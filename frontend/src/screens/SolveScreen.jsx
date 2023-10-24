@@ -18,7 +18,8 @@ const SolveScreen = () => {
 
     useEffect(()=>{
         const getQues=async()=>{
-            const response=await axios.get(`http://localhost:5000/api/papers/get-paper/${paperCreator}`);
+            // const response=await axios.get(`http://localhost:5000/api/papers/get-paper/${paperCreator}`);
+            const response=await axios.get(`/api/papers/get-paper/${paperCreator}`);
             if(response.data.message==='user has paper'){
                 let len=response.data.paper.paper.length;
                 let allQues=response.data.paper.paper;

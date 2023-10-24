@@ -32,7 +32,9 @@ const ResultPage3 = ({questions, selectedOptions, studentName, paperCreator, onP
 
     const handleSubmit=async ()=>{
         console.log(studentName, "submitted");
-        const response=await axios.post(`http://localhost:5000/api/students/submit-mark`,
+        // const response=await axios.post(`http://localhost:5000/api/students/submit-mark`,
+        // {name: studentName, paperCreator, totalMarks, obtainMarks: marks, correct, wrong});
+        const response=await axios.post(`/api/students/submit-mark`,
         {name: studentName, paperCreator, totalMarks, obtainMarks: marks, correct, wrong});
         if(response.data.message==='paper submitted'){
             toast.success("Marks submitted successfully")

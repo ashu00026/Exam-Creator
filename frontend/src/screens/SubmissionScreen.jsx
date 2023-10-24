@@ -8,7 +8,8 @@ const SubmissionScreen = () => {
   const {userInfo}=useSelector((state)=> state.auth);
   
   const fetchStudents=async()=>{
-    const response=await axios.get(`http://localhost:5000/api/students/get-mark/${userInfo._id}`);
+    // const response=await axios.get(`http://localhost:5000/api/students/get-mark/${userInfo._id}`);
+    const response=await axios.get(`/api/students/get-mark/${userInfo._id}`);
     // console.log(response.data.data);
     SetStudents(response.data.data);
   }
