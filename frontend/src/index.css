@@ -1,0 +1,97 @@
+/* *{
+    border: 1px solid red;
+} */
+#navbar{
+    width: 100%;
+}
+
+#dashboard-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+}
+
+#questions-container{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 50px;
+    align-items: center;
+}
+
+.question-container{
+    width: max-content;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    border: 1px solid rgb(54, 146, 212);
+    border-radius: 5%;
+    box-shadow: 1px 5px rgb(150, 182, 203);
+
+}
+
+.question-delbtn-container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.delque-btn{
+    color: black;
+    font-size: x-large;
+    cursor: pointer;
+}
+
+#save-create-btn-container{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#save-btn{
+    border-radius: 10%;
+    background-color: rgb(1, 127, 127);
+    color: white;
+    padding: 10px;
+    margin: 10px;
+}
+#save-btn:hover{
+    background-color: rgb(61, 161, 161);
+}
+
+#link-btn{
+    border-radius: 10%;
+    background-color: rgb(3, 121, 94);
+    color: white;
+    padding: 10px;
+    margin: 10px;
+}
+#link-btn:hover{
+    background-color: rgb(56, 141, 121);
+}
+
+.save-icon{
+    font-size: x-large;
+}
+.link-icon{
+    font-size: xx-large;
+}
+.copy-icon{
+    font-size: xx-large;
+    color: rgb(57, 57, 57);
+    cursor: pointer;
+}
+
+#link-container{
+    border-radius: 7%;
+    border: 1px dotted rgb(5, 148, 164);
+    padding: 10px;
+}

@@ -4,6 +4,10 @@ import axios from "axios";
 import { useSelector } from 'react-redux';
 import Header from '../components/Header';
 import { toast } from 'react-toastify'
+import { MdDelete } from 'react-icons/md';
+import { FaPencilAlt } from 'react-icons/fa';
+import { BsLink45Deg } from 'react-icons/bs';
+import { BiSolidCopy } from 'react-icons/bi';
 
 const DashboardScreen = () => {
     const {userInfo} = useSelector((state)=>state.auth);
@@ -57,31 +61,34 @@ const DashboardScreen = () => {
     <>
     <Header />
     
-    <div>
+    <div id="dashboard-container">
         <h1>Create an Exam</h1>
         <QuestionForm onQuestionCreate={handleQuestionCreate} />
-        <h2>Created Questions</h2>
-        <button onClick={handleSavePaper}>Save Paper</button>
+        <div id="questions-container">
             {questions.map((question, index) => (
-                <div key={index}>
-                    <h5>
-                        <strong>Question:</strong> {question.questionDetail}
-                        <button type="button" onClick={() => deleteQue(question.questionDetail)}>Delete</button>
-                        <ul>
-                        {question.options.map((option, i)=>(
-                            <li key={i}>{option}</li>
-                        ))}
-                        </ul>
-                    </h5>
-                    <p>Answer :{question.answer}</p>
-                    <p>weightage :{question.weightage}</p>
+                <div key={index} className='question-container'>
+                    <div className="question-delbtn-container">
+                        <h5><strong>Q:</strong> {question.questionDetail}</h5>
+                        <MdDelete  onClick={() => deleteQue(question.questionDetail)} className='delque-btn'/>
+                    </div>
+                    <ul>
+                    {question.options.map((option, i)=>(
+                        <li key={i}>{option}</li>
+                    ))}
+                    </ul>
+                    <p> <strong>Answer : </strong> <i>{question.answer}</i></p>
+                    <p> <strong>weightage : </strong> {question.weightage} marks</p>
                 </div>
             ))}
+        </div>
+        <div id="save-create-btn-container">
+            <button onClick={handleSavePaper} id='save-btn'>Save Paper <FaPencilAlt className='save-icon'/></button>
+            <button onClick={handleExamLink} id='link-btn'>Create Exam Link <BsLink45Deg className='link-icon'/></button>
+            {testLink.length>0 &&
+            <p id='link-container'><i>your test link : </i>"{testLink}" <BiSolidCopy className='copy-icon' onClick={()=> handleCopyLink()} title='copy link'/></p>
+            }
+        </div>       
     </div>
-    <button onClick={handleExamLink}>Create Exam Link</button>
-    { testLink.length>0 &&
-        <p>your test link : {testLink} <button onClick={()=> handleCopyLink()}>Copy</button></p>
-    }
     </>
   );
 }

@@ -26,7 +26,7 @@ const Header = () => {
   }
   return (
     <header>
-      <Navbar bg='dark' variant='dark' expand='lg' collapseOnSelect>
+      <Navbar bg='dark' variant='dark' expand='lg' collapseOnSelect id="navbar">
         <Container>
           {/* <Navbar.Brand href='/'>MERN Auth</Navbar.Brand> */}
 
