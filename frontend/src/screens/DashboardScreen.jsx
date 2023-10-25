@@ -62,8 +62,10 @@ const DashboardScreen = () => {
     <Header />
     
     <div id="dashboard-container">
-        <h1>Create an Exam</h1>
-        <QuestionForm onQuestionCreate={handleQuestionCreate} />
+        <h1>Question Paper</h1>
+        <div id="add-que-container">
+            <QuestionForm onQuestionCreate={handleQuestionCreate} />
+        </div>
         <div id="questions-container">
             {questions.map((question, index) => (
                 <div key={index} className='question-container'>

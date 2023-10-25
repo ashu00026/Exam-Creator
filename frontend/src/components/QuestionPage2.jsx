@@ -21,12 +21,14 @@ const QuestionPage2 = ({questions, onPageChange, onOptionChange, selectedOptions
         }
     }
     return (
-      <div>
-          <p>question page 2</p>
+        <>
+        <h3>Answer all the Questions and submit the test</h3>
+      <div className='questions-container-solve'>
+          {/* <p>question page 2</p> */}
           {questions.map((question, qindex)=>(
-          <div key={qindex}>
-              <h5>
-                  <strong>Question:</strong> {question.questionDetail} -&gt;{question.weightage}</h5>
+          <div key={qindex} className="question-container-solve">
+              <h5><strong>Question:</strong> {question.questionDetail}</h5>
+              <div className="options-container-solve">
                   {question.options.map((option, oindex)=>{
                       return (
                       <div key={oindex}>
@@ -37,12 +39,17 @@ const QuestionPage2 = ({questions, onPageChange, onOptionChange, selectedOptions
                                 checked={selectedOptions[qindex+startIdx]===option}
                                 onChange={()=> onOptionChange(qindex+startIdx,option)}/>{option}
                       </div>)
-                  })}
-          </div>
+                  })} 
+                </div>
+                <hr />
+            </div>
           ))}
-          <button onClick={()=> onPageChange(1)}>Prev</button>
-          <button onClick={()=> handleCheckScore()}>Check Score</button>
+          <div id="prev-check-score-btn-container">
+            <button onClick={()=> onPageChange(1)} id="prev-btn-solve">Prev</button>
+            <button onClick={()=> handleCheckScore()} id="check-score-btn-solve">Check Score</button>
+          </div>
       </div>
+      </>
     )
 }
 

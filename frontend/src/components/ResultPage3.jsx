@@ -45,23 +45,38 @@ const ResultPage3 = ({questions, selectedOptions, studentName, paperCreator, onP
         }
     }
     return (
-      <div>
-          <p>result page 3</p>
-          <p>The actual answers</p>
-          {
+      <div id="final-page-solve">
+        <h3>Subbmit the test</h3>
+          {/* <p>result page 3</p> */}
+          {/* <p>The actual answers</p> */}
+          {/* {
             questions.map((elem,idx)=>{
                 return <p key={idx}>{elem.answer} -----&gt; marks associated : {elem.weightage}</p>
             })
-          }
-          <br />
-          <p>Your answers</p>
-          {
+          } */}
+          {/* <br /> */}
+          {/* <p>Your answers</p> */}
+          {/* {
             selectedOptions.map((elem,idx)=>{
                 return <p key={idx}>{elem}</p>
             })
-          }
-          <h2>you scored {marks} out of {totalMarks}, correct ans : {correct} and wrong ans : {wrong}</h2>
-          <button onClick={()=> handleSubmit()}>Submit</button>
+          } */}
+          <div id="marks-graph-container">
+            <div className="marks-container">
+                <span>Your Score : </span>
+                <span className="marks-obtained correct-col">{marks}</span>
+                <span className="slash"> / </span>
+                <span className="total-marks total-col">{totalMarks}</span>
+            </div>
+            <div class="graph-container">
+                <h4>Correct Answers : <span className="correct-col">{correct}</span></h4>
+                <h4>Wrong Answers : <span className="wrong-col">{wrong}</span></h4>
+            </div>
+          </div>
+          {/* <h2>you scored {marks} out of {totalMarks}, correct ans : {correct} and wrong ans : {wrong}</h2> */}
+          <div id="submit-btn-container">
+            <button onClick={()=> handleSubmit()} id="test-submit-btn">Submit</button>
+          </div>
       </div>
     )
 }

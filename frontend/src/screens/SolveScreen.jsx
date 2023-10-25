@@ -55,8 +55,9 @@ const SolveScreen = () => {
     
     return (
     <div>
-        <p>solve paper created by : {paperCreator}</p>
-        <p>the currentPage is {currentPage}</p>
+        {/* <p>solve paper created by : {paperCreator}</p> */}
+        {/* <p>the currentPage is {currentPage}</p> */}
+        {/* <h3>Answer all the Questions and submit the test</h3> */}
         {currentPage===1 && 
             <QuestionPage1 
             questions={questionSet1}

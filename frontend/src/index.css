@@ -95,3 +95,315 @@
     border: 1px dotted rgb(5, 148, 164);
     padding: 10px;
 }
+
+#add-icon{
+    font-size: xx-large;
+    cursor: pointer;
+    color: rgb(56, 141, 121);
+}
+
+#add-que-container{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    width: 100%;
+}
+
+#add-que-form{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+}
+
+#add-que-input-container{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 5px;
+    padding: 5px;
+    width: 500px; 
+}
+
+#add-que-input-container input{
+    width: 100%;
+    border: 1px solid rgb(93, 93, 93); 
+    border-radius: 5%;
+    padding: 5px;
+    background: rgba(255,255,255,0.5);
+    margin: 0 0 10px 0;
+}
+
+#add-save-btn{
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#options-container{
+    width: 200px;
+}
+
+#add-opt-btn{
+    background-color: rgb(2, 86, 134);
+    color: white;
+    border: none;
+    border-radius: 10%;
+    padding: 5px;
+}
+#add-opt-btn:hover{
+    background-color: rgb(59, 107, 135);
+}
+
+#save-que-btn{
+    background-color: rgb(3, 138, 17);
+    color: white;
+    border: none;
+    border-radius: 10%;
+    padding: 5px;
+}
+#save-que-btn:hover{
+    background-color: rgb(60, 143, 68);
+}
+
+#cancel-que-btn{
+    background-color: rgb(154, 5, 5);
+    color: white;
+    border: none;
+    border-radius: 10%;
+    padding: 10px;
+}
+
+#cancel-que-btn:hover{
+    background-color: rgb(137, 54, 54);
+}
+
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+  
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+  
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+
+#submission-container{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
+    justify-content: center;
+}
+
+#refresh-btn-container{
+    display: flex;
+    flex-direction: row-reverse;
+    width: 100%;
+}
+
+#refresh-btn{
+    background-color: rgb(4, 126, 63);
+    color: white;
+    border: none;
+    border-radius: 10%;
+    padding: 10px;
+    font-size: large;
+}
+
+#question-page{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 20px;
+}
+
+#student-name-container{
+    border: 2px solid rgb(4, 126, 63);
+    box-shadow: 1px 7px rgba(121, 218, 168, 0.593);
+    margin-bottom: 10px;
+    margin-top: 20px;
+}
+
+#student-name-container{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px;
+    width: 50%;
+    gap: 10px;
+}
+
+.questions-container-solve{
+    border: 5px solid rgb(72, 72, 72);
+    box-shadow: 3px 3px 6px 6px rgba(111, 111, 111, 0.593);
+    border-radius:5%;
+    padding: 20px;
+    width: 50%;
+}
+
+.question-container-solve{
+    margin: 5px;
+}
+
+.options-container-solve{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    align-items: center;
+}
+
+input[type="radio"]{
+    margin-right: 7px;
+}
+
+#next-btn-page1-container{
+    width: 100%;
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+#prev-check-score-btn-container{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#next-btn-solve{
+    background-color: rgb(5, 103, 116);
+    color: white;
+    border: none;
+    border-radius: 10%;
+    padding: 10px;
+    font-size: large;
+}
+#next-btn-solve:hover{
+    background-color: rgb(61, 116, 124);
+}
+
+#prev-btn-solve{
+    background-color: rgb(5, 103, 116);
+    color: white;
+    border: none;
+    border-radius: 10%;
+    padding: 10px;
+    font-size: large;
+}
+#prev-btn-solve:hover{
+    background-color: rgb(61, 116, 124);
+}
+
+#check-score-btn-solve{
+    background-color: rgb(3, 140, 42);
+    color: white;
+    border: none;
+    border-radius: 10%;
+    padding: 10px;
+    font-size: large;
+}
+#check-score-btn-solve:hover{
+    background-color: rgb(58, 145, 82);
+}
+
+#final-page-solve{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.marks-container{
+    font-size: 24px;
+    text-align: center;
+}
+.marks-obtained {
+    font-size: 100px;
+}
+.slash {
+    font-size: 120px;
+}
+.total-marks {
+    font-size: 100px;
+}
+
+#marks-graph-container{
+    display: flex;
+    flex-direction: row;
+    gap: 100px;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.correct-col{
+    color: rgb(3, 174, 3);
+}
+
+.total-col{
+    color: rgb(3, 91, 106);
+}
+
+.wrong-col{
+    color: rgb(204, 6, 6);
+}
+
+#test-submit-btn{
+    background-color: rgb(3, 140, 42);
+    color: white;
+    border: none;
+    border-radius: 10%;
+    padding: 10px;
+    font-size: large;
+}
+#test-submit-btn:hover{
+    background-color: rgb(8, 169, 54);
+}
+
+.marks-container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.centered-content {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.banner {
+    background-color: #002347; /* Banner background color */
+    color: #fff; /* Text color */
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 24px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 500px;
+}
+
+.banner p {
+    margin: 5px;
+}

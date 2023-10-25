@@ -60,7 +60,7 @@ const ProfileScreen = () => {
         <>
         <Header />
         <FormContainer>
-            <h1>Update</h1>
+            <h1>Profile</h1>
 
             <Form onSubmit={submitHandler}>
 

@@ -12,13 +12,18 @@ const QuestionPage1 = ({questions, onPageChange, onOptionChange, selectedOptions
         else onPageChange(2);
     }
     return (
-      <div>
-        <input type="text" value={studentName} onChange={(e)=> onNameChange(e.target.value)}/>
-        <p>question page 1</p>
+      <div id="question-page">
+        <h3>Answer all the Questions and submit the test</h3>
+        <div id="student-name-container">
+          <label htmlFor="name">Enter your name:</label>
+          <input type="text" id="name" value={studentName} onChange={(e)=> onNameChange(e.target.value)} placeholder='name...' size={30}/>
+        </div>
+        <div className="questions-container-solve">
+        {/* <p>question page 1</p> */}
         {questions.map((question, qindex)=>(
-          <div key={qindex}>
-              <h5>
-                  <strong>Question:</strong> {question.questionDetail} -&gt;{question.weightage}</h5>
+          <div key={qindex} className="question-container-solve">
+              <h5><strong>Question:</strong> {question.questionDetail}</h5>
+                  <div className="options-container-solve">
                   {question.options.map((option, oindex)=>{
                       return (
                       <div key={oindex}>
@@ -30,9 +35,14 @@ const QuestionPage1 = ({questions, onPageChange, onOptionChange, selectedOptions
                                 onChange={()=> onOptionChange(qindex+startIdx,option)}/>{option}
                       </div>)
                   })}
+                  </div>
+                  <hr />
           </div>
           ))}
-        <button onClick={()=> handleNextPage()}>Next</button>
+          <div id="next-btn-page1-container">
+          <button onClick={()=> handleNextPage()} id="next-btn-solve">Next</button>
+          </div>
+        </div>
       </div>
     )
 }
