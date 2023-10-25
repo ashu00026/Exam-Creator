@@ -7,8 +7,11 @@ import paperRoutes from "./routes/paperRoutes.js";
 import studentRoutes from "./routes/studentRoute.js";
 import { errorHandler, notFound } from './middleware/errorMiddleware.js';
 import connectDB from './config/db.js';
+import path from 'path'
 
 connectDB();
+
+const __dirname=path.resolve();
 
 const app=express();
 
@@ -22,6 +25,12 @@ app.use('/api/students',studentRoutes);
 
 app.get('/',(req,res)=>{
     res.send("Backend running fine")
+})
+
+app.use(express.static(path.join(__dirname, '/frontend/dist')));
+
+app.get('*',(req,res)=>{
+    res.sendFile(path.join(__dirname, 'frontend', 'dist', 'index.html'));
 })
 
 app.use(notFound)
