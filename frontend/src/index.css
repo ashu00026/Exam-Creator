@@ -407,3 +407,7 @@ input[type="radio"]{
 .banner p {
     margin: 5px;
 }
+
+#small-text{
+    font-size: medium;
+}

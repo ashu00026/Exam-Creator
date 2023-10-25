@@ -45,11 +45,16 @@ const DashboardScreen = () => {
     }
 
     const handleExamLink=()=>{
-        let currentURL=window.location.href;
-        let initalURL=currentURL.split('dashboard')[0];
-        let finalURL=initalURL+`solve/${userInfo._id}`;
-        console.log(finalURL);
-        setTestLink(finalURL);
+        if(questions.length<=1){
+            toast.error("Add atlest 2 questions")
+        }
+        else{
+            let currentURL=window.location.href;
+            let initalURL=currentURL.split('dashboard')[0];
+            let finalURL=initalURL+`solve/${userInfo._id}`;
+            console.log(finalURL);
+            setTestLink(finalURL);
+        }
     }
 
     const handleCopyLink=()=>{
@@ -62,7 +67,7 @@ const DashboardScreen = () => {
     <Header />
     
     <div id="dashboard-container">
-        <h1>Question Paper</h1>
+        <h1>Question Paper <span id="small-text">&#40;add atleast 2 questions&#41;</span> </h1>
         <div id="add-que-container">
             <QuestionForm onQuestionCreate={handleQuestionCreate} />
         </div>
