@@ -23,9 +23,9 @@ app.use('/api/users',userRoutes);
 app.use('/api/papers',paperRoutes);
 app.use('/api/students',studentRoutes);
 
-app.get('/',(req,res)=>{
-    res.send("Backend running fine")
-})
+// app.get('/',(req,res)=>{
+//     res.send("Backend running fine")
+// })
 
 app.use(express.static(path.join(__dirname, '/frontend/dist')));
 
