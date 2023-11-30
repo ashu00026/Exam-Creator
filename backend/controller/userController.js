@@ -2,10 +2,6 @@ import asyncHandler from 'express-async-handler';
 import User from '../models/userModel.js';
 import generateToken from '../utils/generateToken.js';
 
-// ------------------------------------------------------------------------------------------------------------------
-// @desc    Auth user/set token
-// route    POST /api/users/login
-// @access  Public
 const authUser= asyncHandler(async(req,res)=>{
     const {email,password} = req.body;
     const user=await User.findOne({email});
@@ -25,10 +21,6 @@ const authUser= asyncHandler(async(req,res)=>{
 
 })
 
-// ------------------------------------------------------------------------------------------------------------------
-// @desc    Register a new user
-// route    POST /api/users/
-// @access  Public
 const registerUser= asyncHandler(async(req,res)=>{
     const {name,email,password} = req.body;
 
@@ -56,10 +48,6 @@ const registerUser= asyncHandler(async(req,res)=>{
     }
 })
 
-// ------------------------------------------------------------------------------------------------------------------
-// @desc    Logout user
-// route    POST /api/users/logout
-// @access  Public
 const logoutUser= asyncHandler(async(req,res)=>{
     res.cookie('jwt','',{
         httpOnly: true,
@@ -68,10 +56,6 @@ const logoutUser= asyncHandler(async(req,res)=>{
     res.status(200).json({message : 'User logged out'});
 })
 
-// ------------------------------------------------------------------------------------------------------------------
-// @desc    Get user profile
-// route    GET /api/users/profile
-// @access  Private
 const getUserProfile= asyncHandler(async(req,res)=>{
 
     // req.user is created while login(/auth) in order to access the data of user using req.user in any controller
@@ -84,10 +68,7 @@ const getUserProfile= asyncHandler(async(req,res)=>{
     res.status(200).json(user);
 })
 
-// ------------------------------------------------------------------------------------------------------------------
-// @desc    Update user Profile
-// route    PUT /api/users/profile
-// @access  Private
+
 const updateUserProfile= asyncHandler(async(req,res)=>{
 
     const oldUser=await User.findById(req.user._id);
